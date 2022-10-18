@@ -5,14 +5,14 @@ import HeaderTop from "./components/HeaderTop";
 
 function App() {
     const [city, setCity] = useState("London");
-    const [days, setDays] = useState(7);
+    // const [days, setDays] = useState(7);
     const [activeTabDay, setActiveTabDay] = useState(0);
 
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [weatherData, setweatherData] = useState([]);
 
-    const API = `https://api.weatherapi.com/v1/forecast.json?key=db5e238602fb4f4ba9a150153221610&q=${city}&days=${days}&aqi=no&alerts=no`;
+    const API = `https://api.weatherapi.com/v1/forecast.json?key=db5e238602fb4f4ba9a150153221610&q=${city}&days=${7}&aqi=no&alerts=no`;
 
     useEffect(() => {
         fetch(API)
@@ -34,7 +34,8 @@ function App() {
                     setError(e);
                 }
             );
-    }, [city, days]);
+        // }, [city, days]);
+    }, [city, API]);
 
     console.log(weatherData);
 
