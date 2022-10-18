@@ -8,7 +8,7 @@ function PerHourTable({ days, activeTabDay }) {
             return (
                 <th
                     className={
-                        hour == 3 || hour == 9 || hour == 15
+                        hour === 3 || hour === 9 || hour === 15
                             ? "border_right"
                             : ""
                     }
@@ -24,7 +24,7 @@ function PerHourTable({ days, activeTabDay }) {
             return (
                 <td
                     className={
-                        hour == 3 || hour == 9 || hour == 15
+                        hour === 3 || hour === 9 || hour === 15
                             ? "border_right"
                             : ""
                     }
@@ -43,7 +43,7 @@ function PerHourTable({ days, activeTabDay }) {
             return (
                 <td
                     className={
-                        hour == 3 || hour == 9 || hour == 15
+                        hour === 3 || hour === 9 || hour === 15
                             ? "border_right"
                             : ""
                     }
@@ -60,7 +60,7 @@ function PerHourTable({ days, activeTabDay }) {
             return (
                 <td
                     className={
-                        hour == 3 || hour == 9 || hour == 15
+                        hour === 3 || hour === 9 || hour === 15
                             ? "border_right"
                             : ""
                     }
@@ -78,7 +78,7 @@ function PerHourTable({ days, activeTabDay }) {
             return (
                 <td
                     className={
-                        hour == 3 || hour == 9 || hour == 15
+                        hour === 3 || hour === 9 || hour === 15
                             ? "border_right"
                             : ""
                     }
@@ -94,7 +94,7 @@ function PerHourTable({ days, activeTabDay }) {
             return (
                 <td
                     className={
-                        hour == 3 || hour == 9 || hour == 15
+                        hour === 3 || hour === 9 || hour === 15
                             ? "border_right"
                             : ""
                     }
@@ -110,7 +110,7 @@ function PerHourTable({ days, activeTabDay }) {
             return (
                 <td
                     className={
-                        hour == 3 || hour == 9 || hour == 15
+                        hour === 3 || hour === 9 || hour === 15
                             ? "border_right"
                             : ""
                     }
