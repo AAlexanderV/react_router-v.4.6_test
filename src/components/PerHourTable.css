@@ -1,0 +1,66 @@
+table, tr, th, td {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.border_right {
+    border-right: #dfdfdf 1px solid;
+}
+
+.perHour_table tr{
+    width: 100%;
+    display: flex;
+}
+
+.part_of_day th {
+    width: 25%;
+    font-weight: normal;
+    padding-bottom: 5px;
+}
+
+.time th {
+    width: 12.5%;
+    padding: 3px;
+    font-weight: normal;
+    font-size: 14px;
+    color: #9d9d9d;
+    background: #f2f2f2;
+}
+
+/* .icons{
+    
+} */
+.icons td {
+    padding-top: 5px;
+    width: 12.5%;
+}
+
+.perHour_temperature td, .perHour_feelsLike td, .perHour_wind td, .rain_chance td, .snow_chance td{
+    width: 12.5%;
+    text-align: center;
+}
+
+.perHour_temperature td{
+    padding: 5px 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.perHour_feelsLike td{
+    padding-bottom: 14px;
+    color: #9d9d9d;
+    font-weight: bold;
+    font-size: 12px;
+}
+.perHour_wind td{
+    padding: 4px 0;
+    background: #f2f2f2;
+}
+.rain_chance td{
+    padding: 4px 0;
+    background-color: rgba(61, 184, 255, 0.252);
+}
+.snowChance td{
+    padding: 4px 0;
+}
