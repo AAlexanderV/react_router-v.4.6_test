@@ -12,7 +12,9 @@ function CurrentConditions({ currentConditions, days, activeTabDay }) {
     if (activeTabDay === 0) {
         return (
             <div className="current_conditions">
-                <p>Current conditions:</p>
+                <p>
+                    Current<br></br>conditions:
+                </p>
                 <div className="condition_img">
                     <img
                         src={currentConditions.condition.icon}
@@ -27,10 +29,12 @@ function CurrentConditions({ currentConditions, days, activeTabDay }) {
                 <div className="sun_rise-set">
                     <p>
                         <span>Sunrise: </span>
+                        <br></br>
                         {days[activeTabDay].astro.sunrise}
                     </p>
                     <p>
                         <span>Sunset: </span>
+                        <br></br>
                         {days[activeTabDay].astro.sunset}
                     </p>
                 </div>
@@ -56,10 +60,12 @@ function CurrentConditions({ currentConditions, days, activeTabDay }) {
                 <div className="sun_rise-set">
                     <p>
                         <span>Sunrise: </span>
+                        <br></br>
                         {days[activeTabDay].astro.sunrise}
                     </p>
                     <p>
                         <span>Sunset: </span>
+                        <br></br>
                         {days[activeTabDay].astro.sunset}
                     </p>
                 </div>

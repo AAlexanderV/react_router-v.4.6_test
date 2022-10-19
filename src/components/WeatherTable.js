@@ -8,7 +8,6 @@ function WeatherTable({
     activeTabDay,
     setActiveTabDay,
 }) {
-    // console.log(days);
     return (
         <div className="weather-table">
             <TabsDays

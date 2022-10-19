@@ -34,7 +34,6 @@ function App() {
                     setError(e);
                 }
             );
-        // }, [city, days]);
     }, [city, API]);
 
     console.log(weatherData);
