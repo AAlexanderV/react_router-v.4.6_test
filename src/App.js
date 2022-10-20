@@ -1,7 +1,11 @@
 import { useState, useEffect } from "react";
 import "./App.css";
-import WeatherTable from "./components/WeatherTable";
+
 import HeaderTop from "./components/HeaderTop";
+import HeaderBottom from "./components/HeaderBottom";
+import InnerMain from "./components/InnerMain";
+import About from "./components/About";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 function App() {
     const [city, setCity] = useState("London");
@@ -36,66 +40,67 @@ function App() {
             );
     }, [city, API]);
 
+    const router = createBrowserRouter([
+        {
+            path: "/",
+            element: (
+                <div className="header">
+                    <HeaderTop
+                        setCity={setCity}
+                        setIsLoaded={setIsLoaded}
+                    />
+                    <HeaderBottom
+                        isLoaded={isLoaded}
+                        error={error}
+                        weatherData={weatherData}
+                    />
+                </div>
+            ),
+
+            children: [
+                {
+                    path: "/about",
+                    element: <About />,
+                },
+                {
+                    path: "/",
+                    element: (
+                        <InnerMain
+                            activeTabDay={activeTabDay}
+                            setActiveTabDay={setActiveTabDay}
+                            isLoaded={isLoaded}
+                            error={error}
+                            weatherData={weatherData}
+                        />
+                    ),
+                },
+            ],
+        },
+        // {
+        //     path: "/about",
+        //     element: <About />,
+        // },
+    ]);
+
     console.log(weatherData);
 
-    if (error) {
-        return (
-            <>
-                <div className="header">
-                    <HeaderTop
-                        setCity={setCity}
-                        setIsLoaded={setIsLoaded}
-                    />
-                    <div className="header_bottom">
-                        <p>
-                            {error.message} Please check the correct spelling of
-                            the city.
-                        </p>
-                    </div>
-                </div>
-            </>
-        );
-    } else if (!isLoaded) {
-        return (
-            <>
-                <div className="header">
-                    <HeaderTop
-                        setCity={setCity}
-                        setIsLoaded={setIsLoaded}
-                    />
-                    <div className="header_bottom">
-                        <p>Loading...</p>
-                    </div>
-                </div>
-            </>
-        );
-    } else {
-        return (
-            <>
-                <div className="header">
-                    <HeaderTop
-                        setCity={setCity}
-                        setIsLoaded={setIsLoaded}
-                    />
-                    <div className="header_bottom">
-                        <p>
-                            Weather in{" "}
-                            <strong>
-                                {isLoaded && weatherData.location.name}
-                            </strong>
-                        </p>
-                    </div>
-                </div>
-
-                <WeatherTable
-                    currentConditions={weatherData.current}
-                    days={weatherData.forecast.forecastday}
-                    activeTabDay={activeTabDay}
-                    setActiveTabDay={setActiveTabDay}
+    return (
+        <>
+            {/* <div className="header">
+                <HeaderTop
+                    setCity={setCity}
+                    setIsLoaded={setIsLoaded}
                 />
-            </>
-        );
-    }
+                <HeaderBottom
+                    isLoaded={isLoaded}
+                    error={error}
+                    weatherData={weatherData}
+                />
+            </div> */}
+
+            <RouterProvider router={router} />
+        </>
+    );
 }
 
 export default App;

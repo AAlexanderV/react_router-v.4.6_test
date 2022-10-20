@@ -1,4 +1,6 @@
+import { Link } from "react-router-dom";
 import logo from "./images/meteo-cat.png";
+import "./../App.css";
 
 function HeaderTop({ setCity, setIsLoaded }) {
     const SearchCityHandler = () => {
@@ -24,6 +26,18 @@ function HeaderTop({ setCity, setIsLoaded }) {
                 />
             </div>
             <div className="search">
+                <nav className="nav_menu">
+                    <ul>
+                        <li>
+                            <Link to={`/`}>Main</Link>
+                            {/* <a href={`/main`}>Weather</a> */}
+                        </li>
+                        <li>
+                            <Link to={`/about`}>About</Link>
+                            {/* <a href={`/about`}>About</a> */}
+                        </li>
+                    </ul>
+                </nav>
                 <div className="input_box">
                     <input
                         className="search_city-text"
